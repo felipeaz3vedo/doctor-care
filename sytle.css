@@ -87,6 +87,43 @@ section .content p {
   color: var(--secundary-color-paragraph);
 }
 
+.button {
+  background-color: var(--primary-color-green);
+
+  border: none;
+  border-radius: 4rem;
+
+  margin-bottom: 6rem;
+
+  padding: 1.6rem 3.2rem;
+  width: fit-content;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secundary-color-white);
+
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--primary-color-green-hover);
+
+  transition: background 0.2s;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
 /* ---------------------------------NAVIGATION------------------------------ */
 
 nav {
@@ -199,13 +236,6 @@ body.menu-expanded .menu {
   margin: 4.8rem 0 8rem 0;
 }
 
-.social-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3.2rem;
-}
-
 body.menu-expanded .logo,
 body.menu-expanded button {
   position: relative;
@@ -246,26 +276,8 @@ body.menu-expanded button path {
   margin-bottom: 2.4rem;
 }
 
-#home button {
-  background-color: var(--primary-color-green);
-
-  border: none;
-  border-radius: 4rem;
-
-  margin: 0 auto 6rem auto;
-
-  height: 5.2rem;
-  width: 26.3rem;
-
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--secundary-color-white);
-
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-  justify-content: center;
+#home .button {
+  margin-inline: auto;
 }
 
 #home .hero-image {
@@ -351,4 +363,81 @@ body.menu-expanded button path {
 #about .content p {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+}
+
+#about img {
+  width: 100%;
+}
+
+/* ---------------------------------CONTACT------------------------------ */
+#contact {
+  text-align: left;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+}
+
+#contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  margin-bottom: 3.2rem;
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* ---------------------------------FOOTER------------------------------ */
+
+footer {
+  background-color: var(--primary-color-green);
+  padding-block: 6rem;
+  text-align: left;
+
+  color: var(--secundary-color-white);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+  width: 23.6rem;
+  height: 3.1rem;
+}
+
+footer .logo path {
+  fill: var(--secundary-color-white);
+}
+
+footer p {
+  color: var(--primary-color-beige);
+  line-height: 2;
+
+  margin-bottom: 3.2rem;
+}
+
+footer .social-links {
+  justify-content: flex-start;
+}
+
+#backToTopButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 2.5rem;
+
+  opacity: 0;
+  visibility: hidden;
+  
+}
+
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
 }
