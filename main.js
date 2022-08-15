@@ -14,7 +14,8 @@ function showNavOnScroll() {
     : navigation.classList.remove('scroll');
 }
 
-const statisticsPosition = statistics.getBoundingClientRect();
+let statisticsPosition = statistics.getBoundingClientRect();
+
 console.log(statisticsPosition)
 
 function showBackToTopButton() {
