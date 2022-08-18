@@ -14,12 +14,10 @@ function showNavOnScroll() {
     : navigation.classList.remove('scroll');
 }
 
-let statisticsPosition = statistics.getBoundingClientRect();
-
-console.log(statisticsPosition)
+const statisticsPosition = statistics.getBoundingClientRect();
 
 function showBackToTopButton() {
-  scrollY > statisticsPosition.top
+  scrollY > statisticsPosition.top - 70
     ? backToTopButton.classList.add('show')
     : backToTopButton.classList.remove('show');
 }
