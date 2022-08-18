@@ -586,6 +586,11 @@ footer .social-links {
     height: 3px;
   }
 
+  nav#navigation .menu li a.active {
+    opacity: 1;
+    font-weight: 700;
+  }
+
   nav#navigation .menu li a.active::after,
   nav#navigation .menu li a:hover::after {
     width: 100%;

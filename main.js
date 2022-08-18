@@ -6,6 +6,27 @@ const navigation = document.getElementById('navigation');
 function onScroll() {
   showNavOnScroll();
   showBackToTopButton();
+  activateMenuAtCurrentSection(home);
+  activateMenuAtCurrentSection(services);
+  activateMenuAtCurrentSection(about);
+  activateMenuAtCurrentSection(contact);
+}
+
+function activateMenuAtCurrentSection(section) {
+  const targetLine = scrollY + innerHeight / 2;
+  const sectionTop = section.offsetTop;
+  const sectionHeight = section.offsetHeight;
+  const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop;
+  const sectionEndsAt = sectionTop + sectionHeight;
+  const sectionEndPassedTargetLine = sectionEndsAt <= targetLine;
+  const sectionBoundaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine;
+  const sectionId = section.getAttribute('id');
+  const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
+
+  menuElement.classList.remove('active');
+  if (sectionBoundaries) {
+    menuElement.classList.add('active');
+  }
 }
 
 function showNavOnScroll() {
@@ -14,10 +35,8 @@ function showNavOnScroll() {
     : navigation.classList.remove('scroll');
 }
 
-const statisticsPosition = statistics.getBoundingClientRect();
-
 function showBackToTopButton() {
-  scrollY > statisticsPosition.top - 70
+  scrollY > statistics.offsetTop - 70
     ? backToTopButton.classList.add('show')
     : backToTopButton.classList.remove('show');
 }
@@ -39,7 +58,10 @@ ScrollReveal({
   #home .stats, 
   #services,services header, 
   #services .card, 
-  #about header,
-  #about .content,
-  #about .content img
+  #about .col-a,
+  #about .col-b,
+  #contact .col-a,
+  #contact .col-b
 `);
+
+//2:17:38
